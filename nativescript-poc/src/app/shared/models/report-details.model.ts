@@ -3,7 +3,7 @@ import { DataElement } from "./dataElement.model";
 
 export class ReportDetails extends Report {
     constructor(
-        public id: string, 
+        public id: number, 
         public name: string,
         public date: string,
         public dataStructure: Array<DataElement>,

@@ -1,3 +1,4 @@
-<GridLayout row="0" columns="*, auto" class="add-bar">
-    <!-- Overview headline und searchbar -->
+<GridLayout row="0" columns="auto,*">
+    <Label text="Reports" class="h2 p-10" col="0"></Label>
+    <SearchBar col="1" hint="Suche" [(ngModel)]="searchTearm" (submit)="onSearchSubmit($event)"></SearchBar>
 </GridLayout>

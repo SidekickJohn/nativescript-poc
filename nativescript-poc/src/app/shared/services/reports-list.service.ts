@@ -1,21 +1,23 @@
 import { Injectable } from "@angular/core";
-import { Http, Headers, Response, URLSearchParams } from "@angular/http";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 import { ApiConfig } from "../apiConfig";
 import { Report } from "../models/report.model";
+import { ReportsMock } from "../mock/reports.mock";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 
 @Injectable()
-export class ListService {
+export class ReportsListService {
     
     private baseUrl = ApiConfig.apiUrl + "appdata/" + ApiConfig.appKey + "/reports";
     
-    constructor(private http: Http) { }
+    constructor(private httpClient: HttpClient) { }
 
-    public load(){
-        return this.http.get(this.baseUrl, {
-            headers: this.getCommonHeaders()
+    public load(): Observable<Array<Report>> {
+        return of(ReportsMock);
+        /* return this.httpClient.get(this.baseUrl, {
+            headers: this.getCommonHttpHeaders()
         }).pipe(
             map(res => res.json()),
             map(data => {
@@ -26,13 +28,13 @@ export class ListService {
                 return reportsList;
             }),
             catchError(this.handleErrors)
-        );
+        ); */
     }
 
-    getCommonHeaders() {
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-        return headers;
+    getCommonHttpHeaders() {
+        let httpHeaders = new HttpHeaders();
+        httpHeaders.append("Content-Type", "application/json");
+        return httpHeaders;
     }
 
     handleErrors(error: Response) {

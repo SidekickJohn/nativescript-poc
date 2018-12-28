@@ -1,4 +1,4 @@
 export interface DataElement {
     key: string;
-    value: string;
+    value: number;
 }

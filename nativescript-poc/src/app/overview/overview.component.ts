@@ -1,9 +1,15 @@
 import { Component } from "@angular/core";
+import { Page } from "tns-core-modules/ui/page/page";
 
 @Component({
     selector: "overview",
-    templateUrl: "./overview-header.component.html",
-    styleUrls: ["./overview-header.component.css"]
+    templateUrl: "./app/overview/overview.component.html",
+    styleUrls: ["./app/overview/overview.component.css"]
 })
 
-export class OverviewComponent {}
+export class OverviewComponent {
+    constructor(private page: Page) {
+        this.page.actionBarHidden = true;
+    }
+
+}

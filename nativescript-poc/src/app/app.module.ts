@@ -1,23 +1,18 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { NativeScriptFormsModule } from "nativescript-angular/forms";
-import { NativeScriptHttpModule } from "nativescript-angular/http";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
 import { OverviewHeaderComponent } from "./overview/overview-header/overview-header.component";
-import { ListComponent } from "./overview/list/list.component";
+import { ReportsListComponent } from "./overview/reports-list/reports-list.component";
 import { OverviewComponent } from "./overview/overview.component";
 
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
-// import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { ReportDetailComponent } from "./report-detail/report-detail.component";
 
 @NgModule({
     bootstrap: [
@@ -26,16 +21,16 @@ import { OverviewComponent } from "./overview/overview.component";
     imports: [
         NativeScriptModule,
         NativeScriptFormsModule,
-        NativeScriptHttpModule,
+        NativeScriptHttpClientModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
         OverviewComponent,
         OverviewHeaderComponent,
-        ListComponent
+        ReportsListComponent,
+        ReportDetailComponent
     ],
-    providers: [],
     schemas: [
         NO_ERRORS_SCHEMA
     ]

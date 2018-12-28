@@ -1,0 +1,20 @@
+<GridLayout row="1">
+    <ListView row="0" class="list-group" [items]="reportsList"
+        (itemTap)="onItemTap($event)">
+        <ng-template let-report="item">
+            <GridLayout class="list-group-item" columns="*, auto">
+                <StackLayout col="0" verticalAlignment="center">
+                    <Label [text]="report.name" class="font-weight-bold list-group-item-heading"></Label>
+                    <Label [text]="report.date" class="list-group-item-text"></Label>
+                </StackLayout>
+
+                <Label col="1" horizontal="right">
+                    <FormattedString>
+                        <Span text="&rsaquo;" class="report-icon"> </Span>
+                    </FormattedString>
+                </Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
+
