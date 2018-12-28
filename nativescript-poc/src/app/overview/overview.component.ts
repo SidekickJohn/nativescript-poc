@@ -8,8 +8,15 @@ import { Page } from "tns-core-modules/ui/page/page";
 })
 
 export class OverviewComponent {
+    public searchTerm: string;
+
     constructor(private page: Page) {
         this.page.actionBarHidden = true;
+    }
+
+    public onSearchTermChanged(searchTerm: string) {
+        this.searchTerm = searchTerm;
+        console.log("overview-component: "+ this.searchTerm);
     }
 
 }

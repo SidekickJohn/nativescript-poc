@@ -1,4 +1,4 @@
 <GridLayout rows="auto, *" class="page">
-    <overview-header></overview-header>
-    <reports-list></reports-list>
+    <overview-header (searchTermChanged)="onSearchTermChanged($event)"></overview-header>
+    <reports-list [searchTerm]="searchTerm"></reports-list>
 </GridLayout>
