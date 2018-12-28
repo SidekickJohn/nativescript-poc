@@ -9,6 +9,7 @@ import { OverviewComponent } from "./overview/overview.component";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 // Uncomment and add to NgModule imports if you need to use two-way binding
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
@@ -21,6 +22,7 @@ import { ReportDetailComponent } from "./report-detail/report-detail.component";
     imports: [
         NativeScriptModule,
         NativeScriptFormsModule,
+        NativeScriptUIChartModule,
         NativeScriptHttpClientModule,
         AppRoutingModule
     ],

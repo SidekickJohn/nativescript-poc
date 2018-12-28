@@ -1,5 +1,14 @@
 <ActionBar title="Details" class="action-bar"></ActionBar>
 
-<GridLayout rows="auto, *" class="page">
+<GridLayout rows="auto, auto, *" class="page">
     <Label row="0" class="h2 p-10" [text]="'Report for ' + detailedReport.name"></Label>
+    <GridLayout row="1" rows="*" height="700px">
+        <RadCartesianChart row="0">
+            <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+            <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+            <BarSeries tkCartesianSeries [items]="dataStructure"
+                categoryProperty="key" valueProperty="value"></BarSeries>
+        </RadCartesianChart>
+    </GridLayout>
+    <Label row="2" text="Call Turk"></Label>
 </GridLayout>

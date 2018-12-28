@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ReportDetails } from "../shared/models/report-details.model";
 import { ReportDetailsService } from "../shared/services/report-detail.service";
 import { Page } from "tns-core-modules/ui/page/page";
+import { DataElement } from "../shared/models/dataElement.model";
 
 @Component({
     selector: "ns-details",
@@ -14,6 +15,7 @@ import { Page } from "tns-core-modules/ui/page/page";
 })
 export class ReportDetailComponent implements OnInit {
     detailedReport: ReportDetails;
+    dataStructure: Array<DataElement>;
     isLoading = false;
     listLoaded = false;
 
@@ -30,6 +32,7 @@ export class ReportDetailComponent implements OnInit {
         this.isLoading = true;
         this.reportDetailsService.getReportDetailsList().subscribe((loadedDetails: Array<ReportDetails>) => {
             this.detailedReport = loadedDetails.filter(report => report.id === id)[0];
+            this.dataStructure = this.detailedReport.dataStructure;
             this.isLoading = false;
             this.listLoaded = true;            
         });
