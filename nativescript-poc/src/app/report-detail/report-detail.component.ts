@@ -11,6 +11,7 @@ import { DataElement } from "../shared/models/dataElement.model";
 @Component({
     selector: "ns-details",
     templateUrl: "./app/report-detail/report-detail.component.html",
+    styleUrls: ["./app/report-detail/report-detail.component.css"],
     providers: [ReportDetailsService]
 })
 export class ReportDetailComponent implements OnInit {
@@ -36,9 +37,10 @@ export class ReportDetailComponent implements OnInit {
             this.isLoading = false;
             this.listLoaded = true;            
         });
+    }
 
-
-        
-        
+    onCallButtonTap(): void {
+        // Phonebook API
+        console.log("Call Phonebook API");
     }
 }

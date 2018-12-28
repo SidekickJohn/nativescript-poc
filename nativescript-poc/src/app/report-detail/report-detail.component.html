@@ -1,6 +1,6 @@
 <ActionBar title="Details" class="action-bar"></ActionBar>
 
-<GridLayout rows="auto, auto, *" class="page">
+<GridLayout rows="auto, auto, auto" class="page">
     <Label row="0" class="h2 p-10" [text]="'Report for ' + detailedReport.name"></Label>
     <GridLayout row="1" rows="*" height="700px">
         <RadCartesianChart row="0">
@@ -10,5 +10,13 @@
                 categoryProperty="key" valueProperty="value"></BarSeries>
         </RadCartesianChart>
     </GridLayout>
-    <Label row="2" text="Call Turk"></Label>
+    <GridLayout row="2" columns="*, auto" class="call-consultant-row">
+            <StackLayout col="0" verticalAlignment="center">
+                <Label text="Call Consultant" class="h3 call-consultant-text"></Label>
+            </StackLayout>
+            <Button text="Call" col="1"
+                class="btn btn-primary"
+                (tap)="onCallButtonTap()"
+                horizontal="right"></Button>
+        </GridLayout>
 </GridLayout>
