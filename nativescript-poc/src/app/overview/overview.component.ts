@@ -16,7 +16,6 @@ export class OverviewComponent {
 
     public onSearchTermChanged(searchTerm: string) {
         this.searchTerm = searchTerm;
-        console.log("overview-component: "+ this.searchTerm);
     }
 
 }

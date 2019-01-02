@@ -38,6 +38,8 @@ export class ReportsListComponent implements OnInit, OnChanges {
                 });
                 this.isLoading = false;
                 this.listLoaded = true;
+                this.listSearchService.setItems(this.reportsList);
+                this.listSearchService.refreshItems();
                 this.configureLocalListService();
             });
     }
@@ -57,6 +59,7 @@ export class ReportsListComponent implements OnInit, OnChanges {
     public configureLocalListService(): void {
         const clientFilterComparator: IFilterComparator<Report> = (report: Report): boolean => {
             if (!this.searchTerm) {
+                console.log("no searchterm");
                 return true;
             }
             const escapedRegExp = escapeRegEx(this.searchTerm);

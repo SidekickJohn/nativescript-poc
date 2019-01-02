@@ -36,8 +36,7 @@ export class ListSearchService {
         this.items = modifiedItems;
     }
 
-    private filterItems(items: Array<Report>): Array<Report> {
-        console.log("filtercomparator:"+ this.filterComparator);         
+    private filterItems(items: Array<Report>): Array<Report> {       
 
         return items.filter(this.filterComparator);
     }

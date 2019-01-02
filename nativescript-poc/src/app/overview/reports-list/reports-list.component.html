@@ -1,5 +1,5 @@
 <GridLayout row="1">
-    <ListView row="0" class="list-group" [items]="reportsList"
+    <ListView row="0" class="list-group" [items]="listSearchService.items"
         (itemTap)="onItemTap($event)">
         <ng-template let-report="item">
             <GridLayout class="list-group-item" columns="*, auto">

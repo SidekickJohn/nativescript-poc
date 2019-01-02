@@ -16,4 +16,9 @@ export class OverviewHeaderComponent {
         console.log("You are searching for " + this.searchTearm);
         this.searchTermChanged.next(this.searchTearm);
     }
+
+    public onSearchClear(args): void {
+        console.log("Search cleared.");
+        this.searchTermChanged.next(this.searchTearm);
+    }
 }
