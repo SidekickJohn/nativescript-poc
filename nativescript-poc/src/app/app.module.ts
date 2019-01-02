@@ -14,6 +14,8 @@ import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { ReportDetailComponent } from "./report-detail/report-detail.component";
+import { ReportEditComponent } from "~/app/report-edit/report-edit.component";
+import { ReportDetailsService } from "~/app/shared/services/report-detail.service";
 
 @NgModule({
     bootstrap: [
@@ -31,7 +33,11 @@ import { ReportDetailComponent } from "./report-detail/report-detail.component";
         OverviewComponent,
         OverviewHeaderComponent,
         ReportsListComponent,
-        ReportDetailComponent
+        ReportDetailComponent,
+        ReportEditComponent
+    ],
+    providers: [
+        ReportDetailsService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

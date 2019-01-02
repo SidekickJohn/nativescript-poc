@@ -4,11 +4,13 @@ import { Routes } from "@angular/router";
 
 import { OverviewComponent } from "./overview/overview.component";
 import { ReportDetailComponent } from "./report-detail/report-detail.component";
+import { ReportEditComponent } from "~/app/report-edit/report-edit.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/overview", pathMatch: "full" },
     { path: "overview", component: OverviewComponent },
-    { path: "overview/:id", component: ReportDetailComponent },
+    { path: "detail/:id", component: ReportDetailComponent },
+    { path: "edit/:id", component: ReportEditComponent }
 ];
 
 @NgModule({

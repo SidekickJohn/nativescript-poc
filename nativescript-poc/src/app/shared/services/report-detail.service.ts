@@ -10,12 +10,18 @@ import { ReportDetailsMock } from "../mock/report-details.mock";
 @Injectable()
 export class ReportDetailsService {
     private baseUrl = ApiConfig.apiUrl + "appdata/" + ApiConfig.appKey + "/reportDetails";
-    // private detailedReportsList: ReportDetails[];
+    private reportsCache: Array<ReportDetails> = [];
 
     constructor(private httpClient: HttpClient) { }
 
     getReportDetailsList():  Observable<Array<ReportDetails>> {
-        return of(ReportDetailsMock);
+        if(this.reportsCache.length === 0) {
+            this.reportsCache = ReportDetailsMock;
+            return of(this.reportsCache);
+        } else {
+            return of(this.reportsCache); 
+        }        
+        
         /* return this.httpClient.get(this.baseUrl, {
             headers: this.getCommonHttpHeaders()
         }).pipe(
@@ -29,6 +35,14 @@ export class ReportDetailsService {
             }),
             catchError(this.handleErrors)
         ); */
+    }
+
+    saveChanges(changedReport: ReportDetails): void {
+        for(let a = 0; a < this.reportsCache.length; a++) {
+            if(this.reportsCache[a].id === changedReport.id) {
+                this.reportsCache[a] = changedReport;
+            }
+        }
     }
 
     getCommonHttpHeaders() {

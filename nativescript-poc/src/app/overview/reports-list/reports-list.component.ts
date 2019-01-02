@@ -53,7 +53,7 @@ export class ReportsListComponent implements OnInit, OnChanges {
     public onItemTap(args: ItemEventData): void {
         let id = args.index+1;
         console.log('Navigates to report for ID: ' + id);
-        this.router.navigate(["/overview/"+ id]);
+        this.router.navigate(["/detail/"+ id]);
     }
 
     public configureLocalListService(): void {
