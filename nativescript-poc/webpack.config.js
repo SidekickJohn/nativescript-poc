@@ -40,7 +40,7 @@ module.exports = env => {
         aot, // --env.aot
         snapshot, // --env.snapshot
         uglify, // --env.uglify
-        report, // --env.report
+        report, // --env.document
         sourceMap, // --env.sourceMap
         hmr, // --env.hmr,
     } = env;
@@ -242,13 +242,13 @@ module.exports = env => {
 
 
     if (report) {
-        // Generate report files for bundles content
+        // Generate document files for bundles content
         config.plugins.push(new BundleAnalyzerPlugin({
             analyzerMode: "static",
             openAnalyzer: false,
             generateStatsFile: true,
-            reportFilename: resolve(projectRoot, "report", `report.html`),
-            statsFilename: resolve(projectRoot, "report", `stats.json`),
+            reportFilename: resolve(projectRoot, "document", `report.html`),
+            statsFilename: resolve(projectRoot, "document", `stats.json`),
         }));
     }
 

@@ -1,0 +1,6 @@
+<ActionBar title="Document Details" class="action-bar"></ActionBar>
+<GridLayout row="0" rows="auto, *">
+    <Button row="0" horizontalAlignment="left" class="back-btn" (tap)="onBackBtnTapped($event)">Back</Button>
+    <Button row="0" horizontalAlignment="right" class="three-dots-btn" text="&hellip;" (tap)="onThreeDotsBtnTapped()"></Button>
+    <Image row="1" stretch="aspectFit" class="document-image m-10" [src]="createUrl(loadedDocument)" (tap)="onImageTapped()"></Image>
+</GridLayout>

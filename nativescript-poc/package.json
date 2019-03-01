@@ -8,6 +8,13 @@
             "version": "5.1.0"
         }
     },
+    "scripts": {
+        "show-preview": "tns preview",
+        "run-ios": "tns run ios",
+        "debug-ios": "tns debug ios",
+        "run-android": "tns run android",
+        "debug-android": "tns debug android"
+    },
     "description": "NativeScript Application",
     "license": "SEE LICENSE IN <your-license-filename>",
     "repository": "<fill-your-repository-here>",
@@ -22,6 +29,7 @@
         "@angular/platform-browser-dynamic": "~7.1.0",
         "@angular/router": "~7.1.0",
         "nativescript-angular": "~7.1.0",
+        "nativescript-social-share": "^1.5.1",
         "nativescript-theme-core": "~1.0.4",
         "nativescript-ui-chart": "^3.11.1",
         "reflect-metadata": "~0.1.8",

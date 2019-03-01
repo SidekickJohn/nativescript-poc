@@ -1,0 +1,36 @@
+<ActionBar title="Details" class="action-bar"></ActionBar>
+<GridLayout rows="auto, *">
+    <GridLayout row="0" rows="auto, auto, auto">
+        <Label row="0" class="h2 p-10" [text]="'Report for ' + detailedReport?.name"></Label>
+        <GridLayout row="1" rows="*" height="700px">
+            <RadCartesianChart row="0">
+                <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+                <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+                <BarSeries tkCartesianSeries [items]="dataStructure"
+                    categoryProperty="key" valueProperty="value"></BarSeries>
+            </RadCartesianChart>
+        </GridLayout>
+        <GridLayout row="2" columns="*, auto" class="call-consultant-row">
+                <StackLayout col="0" verticalAlignment="center">
+                    <Label text="Call Consultant" class="h3 call-consultant-text"></Label>
+                </StackLayout>
+                <Button text="Call" col="1"
+                    class="btn btn-primary"
+                    (tap)="onCallButtonTap()"
+                    horizontal="right"></Button>
+            </GridLayout>
+    </GridLayout>
+    <StackLayout row="1" verticalAlignment="bottom">
+        <TextView [(ngModel)]="messageToDisplay" [editable]="false" class="p-10"></TextView>
+        <FlexboxLayout justifyContent="space-between">
+                <Button text="Cancel" col="0"
+                    class="btn btn-primary"
+                    (tap)="onCancelButtonTap()"
+                    horizontal="left"></Button>
+                <Button text="Edit" col="1"
+                        class="btn btn-primary"
+                        (tap)="onEditButtonTap()"
+                        horizontal="right"></Button>
+        </FlexboxLayout>
+    </StackLayout>
+</GridLayout>

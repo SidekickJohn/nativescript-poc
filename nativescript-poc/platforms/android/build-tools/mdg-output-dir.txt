@@ -1,0 +1,1 @@
+/Users/test/Desktop/intra-git/nativescript-poc/nativescript-poc/platforms/android/app/src/main/assets/metadata

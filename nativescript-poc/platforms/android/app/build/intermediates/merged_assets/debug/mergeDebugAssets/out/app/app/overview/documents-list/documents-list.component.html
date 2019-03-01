@@ -1,0 +1,25 @@
+<GridLayout row="1">
+    <ListView row="0" class="list-group" [items]="listSearchService.items"
+        (itemTap)="onItemTap($event)">
+        <ng-template let-document="item">
+            <GridLayout class="list-group-item" columns="auto, *, auto">
+                <Image col="0" stretch="aspectFill" class="thumbnail m-10" [src]="createUrl(document.document_thumb_url)"></Image>
+                <StackLayout col="1" verticalAlignment="center">
+                    <Label [text]="document.bp_name" class="font-weight-bold list-group-item-heading"></Label>
+                    <GridLayout columns="auto, auto">
+                        <Label col="0" text="{{document.document_date | date: 'shortDate'}}" class="list-group-item-text"></Label>
+                        <Label col="1" [text]="document.document_sum.toString() + ' €'" class="list-group-item-text p-l-15"></Label>
+                    </GridLayout>
+                    <Label [text]="document.document_type"  [class]="getDocumentTypeStyleClass(document.document_type)"></Label>
+                </StackLayout>
+
+                <Label col="2" horizontal="right">
+                    <FormattedString>
+                        <Span text="&rsaquo;" class="document-icon"> </Span>
+                    </FormattedString>
+                </Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
+

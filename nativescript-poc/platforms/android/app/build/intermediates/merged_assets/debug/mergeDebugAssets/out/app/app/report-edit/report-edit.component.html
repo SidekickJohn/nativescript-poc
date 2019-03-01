@@ -1,0 +1,17 @@
+<ActionBar title="Edit" class="action-bar"></ActionBar>
+<GridLayout rows="auto, auto, auto, auto, *">
+    <Label row="0" class="h2 p-10" [text]="'Edit Report: ' + currentReport.name"></Label>
+    <Label row="1" class="h3 p-10" text="Edit description: "></Label>
+    <TextView row="2" [(ngModel)]="currentMessage" [editable]="true" class="p-10"></TextView>
+    <Button row="3" text="Fileupload"></Button>
+    <FlexboxLayout row="4" justifyContent="space-between" verticalAlignment="bottom">
+        <Button text="Cancel" col="0"
+            class="btn btn-primary"
+            (tap)="onCancelButtonTap()"
+            horizontal="left"></Button>
+        <Button text="Save" col="1"
+                class="btn btn-primary"
+                (tap)="onSaveButtonTap()"
+                horizontal="right"></Button>
+    </FlexboxLayout>
+</GridLayout>
